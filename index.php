@@ -1,14 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['user_name']) && $_SERVER['REMOTE_ADDR'] !== "94.240.254.188")  {
-	session_unset();
-	session_destroy();
-  header("Location: ../../index.php");
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,7 +52,7 @@ if (!isset($_SESSION['user_name']) && $_SERVER['REMOTE_ADDR'] !== "94.240.254.18
 	</div>
 	<div class="item2">
 		<!-- content -->
-    <?
+    <?php
      if (!empty($_GET['PageName'])) {
        $PageName = $_GET['PageName'];
 			 $Folder = scandir("pages", 1);
